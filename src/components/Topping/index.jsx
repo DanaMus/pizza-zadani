@@ -1,11 +1,15 @@
-import React, { useState } from "react";
-import Check from "../Check";
+import React, { useState } from 'react';
+import Check from '../Check';
 import './style.css';
 
-const Topping = ({ topping }) => {
+const Topping = ({ topping, index, onUpdateSelected }) => {
   return (
     <div className="topping">
-      <Check />
+      <Check
+        initialChecked={topping.selected}
+        onUpdateSelected={onUpdateSelected}
+        index={index}
+      />
       <span className="topping__content">
         {topping.name}: {topping.price} €
       </span>
